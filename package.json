@@ -1,0 +1,29 @@
+{
+  "name": "marble",
+  "version": "0.0.1",
+  "description": "Clean, scalable payment gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elvisAR-git/Marble.git"
+  },
+  "keywords": [
+    "Marble",
+    "marby"
+  ],
+  "author": "Alan Ray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elvisAR-git/Marble/issues"
+  },
+  "homepage": "https://github.com/elvisAR-git/Marble#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "cuid": "^2.1.8",
+    "dotenv": "^16.0.0",
+    "mongodb": "^4.5.0"
+  }
+}
