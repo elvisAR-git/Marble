@@ -18,4 +18,5 @@ export default configurationService;
 export {
     getConfigurationController,
     postConfigurationController
+
 }
