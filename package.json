@@ -1,10 +1,12 @@
 {
   "name": "marble",
+  "type": "module",
   "version": "0.0.1",
   "description": "Clean, scalable payment gateway",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node ./marble/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,11 @@
     "crypto": "^1.0.1",
     "cuid": "^2.1.8",
     "dotenv": "^16.0.0",
+    "express": "^4.17.3",
     "mongodb": "^4.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "nodemon": "^2.0.15"
   }
 }

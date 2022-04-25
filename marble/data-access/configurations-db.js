@@ -1,4 +1,4 @@
-import Id from "../models/id";
+import Id from "../models/id.js";
 
 export default function makeConfigurationsDb({ makeDb }) {
 
