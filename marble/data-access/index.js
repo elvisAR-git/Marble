@@ -1,22 +1,40 @@
-import makeConfigurationsDb from "./configurations-db";
-import makeTransactionsDb from "./transactions-db";
+import makeConfigurationsDb from "./configurations-db.js";
+import makeTransactionsDb from "./transactions-db.js";
 import mongodb from 'mongodb'
 
 
 const MongoClient = mongodb.MongoClient
+
+console.log(process.env.DM_MARBLE_DB_URL, process.env.DM_MARBLE_DB_NAME);
+
 const url = process.env.DM_MARBLE_DB_URL;
 const dbName = process.env.DM_MARBLE_DB_NAME;
 
-const client = new MongoClient(url, { useNewUrlParser: true });
+var client;
+try
+{
+    client = new MongoClient(url, { useNewUrlParser: true });
+} catch (error)
+{
+    console.log("Error in makeDb", error);
+}
 
 
 export async function makeDb() {
-    if (!client.isConnected())
+    try
     {
-        await client.connect();
-    }
+        if (!client.isConnected())
+        {
+            await client.connect();
+        }
 
-    return client.db(dbName);
+        return client.db(dbName);
+    } catch (error)
+    {
+
+        console.log("Error in makeDb", error);
+
+    }
 
 }
 
@@ -30,3 +48,8 @@ const databaseService = {
 
 
 export default Object.freeze(databaseService);
+
+export {
+    configurationsDb,
+    transactionsDb
+}

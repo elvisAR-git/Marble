@@ -1,16 +1,23 @@
-import makeAddTransaction from "./add-transaction";
-import makeAddConfiguration from "./add-configuration";
-import makeGetConfiguration from "./get-configuration";
-import makeListTransactions from "./list-transactions";
-import makeListConfigurations from "./list-configurations";
+import makeAddTransaction from "./transaction/add-transaction.js";
+import makeAddConfiguration from "./configuration/add-configuration.js";
+import makeGetConfiguration from "./configuration/get-configuration.js";
+import makeListTransactions from "./transaction/list-transactions.js";
+import makeListConfigurations from "./configuration/list-configurations.js";
+import makeDeleteConfiguration from "./configuration/delete-configuration.js";
+import makeUpdateConfiguration from "./configuration/update-configuration.js";
+
+import { transactionsDb, configurationsDb } from "../data-access/index.js";
 
 // dependancy injection
 
-const addTransaction = makeAddTransaction({ transactionsDB });
+const addTransaction = makeAddTransaction({ transactionsDb });
 const addConfiguration = makeAddConfiguration({ configurationsDb });
 const getConfiguration = makeGetConfiguration({ configurationsDb });
-const listTransactions = makeListTransactions({ transactionsDB });
+const listTransactions = makeListTransactions({ transactionsDb });
 const listConfigurations = makeListConfigurations({ configurationsDb });
+
+const deleteConfiguration = makeDeleteConfiguration({ configurationsDb });
+const updateConfiguration = makeUpdateConfiguration({ configurationsDb });
 
 
 
@@ -21,7 +28,9 @@ const marbleService = Object.freeze({
     addConfiguration,
     getConfiguration,
     listTransactions,
-    listConfigurations
+    listConfigurations,
+    deleteConfiguration,
+    updateConfiguration
 });
 
 
@@ -32,5 +41,7 @@ export {
     addConfiguration,
     getConfiguration,
     listTransactions,
-    listConfigurations
+    listConfigurations,
+    deleteConfiguration,
+    updateConfiguration
 }

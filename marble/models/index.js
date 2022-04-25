@@ -1,7 +1,7 @@
 import crypto from 'crypto'
-import Id from './id'
-import buildMakeConfiguration from './configuration'
-import buildMakeTransaction from './transaction'
+import Id from './id.js'
+import buildMakeConfiguration from './configuration.js'
+import buildMakeTransaction from './transaction.js'
 
 
 function md5(text) {
