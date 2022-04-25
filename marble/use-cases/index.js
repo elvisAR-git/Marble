@@ -16,13 +16,21 @@ const listConfigurations = makeListConfigurations({ configurationsDb });
 
 // export
 
-const marbleService = {
+const marbleService = Object.freeze({
+    addTransaction,
+    addConfiguration,
+    getConfiguration,
+    listTransactions,
+    listConfigurations
+});
+
+
+export default marbleService;
+
+export {
     addTransaction,
     addConfiguration,
     getConfiguration,
     listTransactions,
     listConfigurations
 }
-
-
-export default marbleService;

@@ -1,5 +1,5 @@
-export default function makePostConfiguration({ addConfiguration }) {
-    return async function postConfiguration({ httpRequest }) {
+export default function makePostConfigurationController({ addConfiguration }) {
+    return async function postConfigurationController({ httpRequest }) {
         try
         {
 
