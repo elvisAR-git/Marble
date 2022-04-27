@@ -1,7 +1,7 @@
 export default function buildMakeConfiguration({ Id, md5 }) {
     return function makeConfiguration({
         configurationId = Id.makeId(),
-        innitiatorName,
+        initiatorName,
         description,
         passKey,
         shortCode,
@@ -31,14 +31,14 @@ export default function buildMakeConfiguration({ Id, md5 }) {
             throw new Error('Configuration id must be a valid id');
         }
 
-        if (!innitiatorName)
+        if (!initiatorName)
         {
-            throw new Error('Configuration must have an innitiator');
+            throw new Error('Configuration must have an initiator name');
         }
 
-        if (typeof innitiatorName !== 'string')
+        if (typeof initiatorName !== 'string')
         {
-            throw new Error(`Configuration innitiator must be a string not ${typeof innitiatorName}`);
+            throw new Error(`Configuration innitiator must be a string not ${typeof initiatorName}`);
         }
 
         if (!description)
@@ -158,7 +158,7 @@ export default function buildMakeConfiguration({ Id, md5 }) {
         return Object.freeze({
 
             getConfigurationId: () => configurationId,
-            getInnitiatorName: () => innitiatorName,
+            getInitiatorName: () => initiatorName,
             getDescription: () => description,
             getPassKey: () => passKey,
             getShortCode: () => shortCode,

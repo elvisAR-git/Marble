@@ -10,6 +10,9 @@ import makePostConfigurationController from "./configurations/post-configuration
 
 const getConfigurationController = makeGetConfigurationController({ getConfiguration });
 const postConfigurationController = makePostConfigurationController({ addConfiguration });
+
+
+
 const getConfigurationsController = makeGetConfigurationsController({ listConfigurations });
 
 const updateConfigurationController = makePatchConfigurationController({ updateConfiguration });

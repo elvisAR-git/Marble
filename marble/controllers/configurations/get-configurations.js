@@ -1,4 +1,5 @@
-export default function makeGetConfigurationsController({ getConfigurations }) {
+export default function makeGetConfigurationsController({ listConfigurations }) {
+
     return async function getConfigurationsController({ httpRequest }) {
         const headers = {
             'Content-Type': 'application/json',
@@ -6,7 +7,7 @@ export default function makeGetConfigurationsController({ getConfigurations }) {
 
         try
         {
-            const configurations = await getConfigurations({});
+            const configurations = await listConfigurations({});
 
             return {
                 headers,

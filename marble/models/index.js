@@ -13,6 +13,7 @@ function md5(text) {
 
 // dependancy injection
 
+
 const makeConfiguration = buildMakeConfiguration({ Id, md5 });
 const makeTransaction = buildMakeTransaction({ Id, md5, makeConfiguration });
 

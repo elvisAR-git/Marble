@@ -5,7 +5,9 @@ export default function makePostConfigurationController({ addConfiguration }) {
 
             const { ...configurationInfo } = httpRequest.body;
 
-            const config = await addConfiguration({ configurationInfo });
+            console.log(configurationInfo);
+
+            const config = await addConfiguration(configurationInfo);
 
             return {
                 headers: {

@@ -1,29 +1,23 @@
 import makeConfigurationsDb from "./configurations-db.js";
 import makeTransactionsDb from "./transactions-db.js";
 import mongodb from 'mongodb'
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const MongoClient = mongodb.MongoClient
 
-console.log(process.env.DM_MARBLE_DB_URL, process.env.DM_MARBLE_DB_NAME);
+console.log(process.env.DM_MARBLE_DB_URL);
 
 const url = process.env.DM_MARBLE_DB_URL;
 const dbName = process.env.DM_MARBLE_DB_NAME;
 
 var client;
-try
-{
-    client = new MongoClient(url, { useNewUrlParser: true });
-} catch (error)
-{
-    console.log("Error in makeDb", error);
-}
-
-
+client = new MongoClient(url, { useNewUrlParser: true });
 export async function makeDb() {
     try
     {
-        if (!client.isConnected())
+        if (!client.isConnected)
         {
             await client.connect();
         }
@@ -48,7 +42,6 @@ const databaseService = {
 
 
 export default Object.freeze(databaseService);
-
 export {
     configurationsDb,
     transactionsDb

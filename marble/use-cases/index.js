@@ -10,14 +10,14 @@ import { transactionsDb, configurationsDb } from "../data-access/index.js";
 
 // dependancy injection
 
-const addTransaction = makeAddTransaction({ transactionsDb });
-const addConfiguration = makeAddConfiguration({ configurationsDb });
-const getConfiguration = makeGetConfiguration({ configurationsDb });
-const listTransactions = makeListTransactions({ transactionsDb });
-const listConfigurations = makeListConfigurations({ configurationsDb });
+const addTransaction = makeAddTransaction(transactionsDb);
+const addConfiguration = makeAddConfiguration(configurationsDb);
+const getConfiguration = makeGetConfiguration(configurationsDb);
+const listTransactions = makeListTransactions(transactionsDb);
+const listConfigurations = makeListConfigurations(configurationsDb);
 
-const deleteConfiguration = makeDeleteConfiguration({ configurationsDb });
-const updateConfiguration = makeUpdateConfiguration({ configurationsDb });
+const deleteConfiguration = makeDeleteConfiguration(configurationsDb);
+const updateConfiguration = makeUpdateConfiguration(configurationsDb);
 
 
 
