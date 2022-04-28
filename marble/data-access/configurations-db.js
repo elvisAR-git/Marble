@@ -78,7 +78,14 @@ export default function makeConfigurationsDb({ makeDb }) {
     async function findByHash({ hash, isDeleted = false }) {
         const db = await makeDb();
         const query = isDeleted ? { isDeleted, hash } : { hash };
-        const result = await db.collection("configurations").findOne(query);
+
+        const collection = db.collection("configurations");
+
+        console.log(collection.findOne);
+
+
+        const result = await collection.findOne(query);
+
         const found = result.toArray();
 
         if (found.length === 0)

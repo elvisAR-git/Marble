@@ -1,4 +1,4 @@
-export default function makeDeleteConfiguration({ configurationsDb }) {
+export default function makeDeleteConfiguration(configurationsDb) {
     return async function deleteConfiguration(configurationId) {
         if (!configurationId)
         {

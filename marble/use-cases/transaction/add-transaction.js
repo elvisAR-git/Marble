@@ -1,16 +1,16 @@
 import models from "../../models/index.js";
 
-export default function makeAddTransaction({ transactionsDB }) {
+export default function makeAddTransaction({ transactionsDb }) {
 
     return async function addTransaction(transactionInfo) {
         const transaction = models.makeTransaction(transactionInfo);
-        const exists = transactionsDB.findByHash(transaction.getHash());
+        const exists = transactionsDb.findByHash(transaction.getHash());
         if (exists)
         {
             return exists;
         }
 
-        return transactionsDB.insert({
+        return transactionsDb.insert({
             transactionId: transaction.getTransactionId(),
             innitiatorId: transaction.getInnitiatorId(),
             beneficiaryId: transaction.getBeneficiaryId(),

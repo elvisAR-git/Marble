@@ -2,10 +2,8 @@ export default function makePostConfigurationController({ addConfiguration }) {
     return async function postConfigurationController({ httpRequest }) {
         try
         {
-
             const { ...configurationInfo } = httpRequest.body;
 
-            console.log(configurationInfo);
 
             const config = await addConfiguration(configurationInfo);
 

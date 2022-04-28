@@ -174,10 +174,10 @@ export default function buildMakeConfiguration({ Id, md5 }) {
             getIsDeleted: () => isDeleted,
             getStatus: () => status,
             getHash: () => {
-                if (!hash)
+                if (hash === undefined)
                 {
 
-                    hash = md5(`${configurationId}${innitiatorName}${description}${passKey}${shortCode}${consumerKeyC2B}${consumerSecretC2B}${consumerKeyB2C}${consumerSecretB2C}${consumerKeyB2B}${consumerSecretB2B}${metaData}${createdOn}${updatedOn}${isDeleted}`);
+                    hash = md5(`${configurationId}${initiatorName}${description}${passKey}${shortCode}${consumerKeyC2B}${consumerSecretC2B}${consumerKeyB2C}${consumerSecretB2C}${consumerKeyB2B}${consumerSecretB2B}${metaData}${createdOn}${updatedOn}${isDeleted}`);
                 }
                 return hash;
             },

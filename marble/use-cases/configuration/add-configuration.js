@@ -1,9 +1,12 @@
 import models from "../../models/index.js";
 
-export default function makeAddConfiguration({ configurationsDb }) {
+export default function makeAddConfiguration(configurationsDb) {
     return async function addConfiguration(configurationInfo) {
+
+        console.log(configurationsDb);
         const configuration = models.makeConfiguration(configurationInfo);
-        const exists = configurationsDb.findByHash(configuration.getHash());
+        console.log(configuration.getHash())
+        const exists = configurationsDb.findByHash({ hash: configuration.getHash() });
         if (exists)
         {
             return exists;

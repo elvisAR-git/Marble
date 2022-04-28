@@ -1,4 +1,4 @@
-export default function makeUpdateConfiguration({ configurationsDb }) {
+export default function makeUpdateConfiguration(configurationsDb) {
     return async function updateConfiguration({ configurationId, updateInfo } = {}) {
         if (!configurationId)
         {
